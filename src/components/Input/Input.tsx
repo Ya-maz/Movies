@@ -3,7 +3,7 @@ import {Container, Col, Row, InputGroup, FormControl, Button} from 'react-bootst
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './Input.css'
 
-const InputLineForSearch = () => {
+const InputLineForSearch: React.FC = () => {
   return (
     <Container className="p-5 mt-5 px800">
       <Row>
@@ -14,7 +14,7 @@ const InputLineForSearch = () => {
           aria-label="SearchMovie"
           aria-describedby="basic-addon1"
           />
-          <Button variant="outline-secondary" id="button-addon2">
+          <Button variant="outline-primary" id="button-addon2">
           Search
           </Button>
           </InputGroup>
