@@ -1,10 +1,7 @@
-
-
 export async function api<T>(url: string): Promise<T> {
-  const response = await fetch(url)
+  const response = await fetch(url);
   if (!response.ok) {
-    throw new Error(response.statusText)
+    throw new Error(response.statusText);
   }
-  return await response.json<T>()
-
+  return await response.json<T>();
 }

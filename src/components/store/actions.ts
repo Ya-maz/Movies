@@ -12,39 +12,42 @@ export const GET_MOVIES_FETCH_FAILED: string = "GET_MOVIES_FETCH_FAILED";
 export const SHOW_LOADING: string = "SHOW_LOADING";
 export const HIDE_LOADING: string = "HIDE_LOADING";
 
-export const getMoviesFetchRequested: typeGetMoviesFetchRequestCreator = (
-  url
-) => {
-  return {
-    type: "GET_MOVIES_FETCH_REQUESTED",
-    url,
+export const getMoviesFetchRequestedCreator: typeGetMoviesFetchRequestCreator =
+  (url) => {
+    return {
+      type: "GET_MOVIES_FETCH_REQUESTED",
+      url,
+    };
   };
-};
 
-export const getMoviesFetchSucceed: typeGetMoviesFetchSucceedCreator = (data) => {
+export const getMoviesFetchSucceedCreator: typeGetMoviesFetchSucceedCreator = (
+  data
+) => {
   return {
     type: "GET_MOVIES_FETCH_SUCCEED",
     data,
   };
 };
 
-export const getMoviesFetchFailed: typeGetMoviesFetchFailedCreator = (error) => {
+export const getMoviesFetchFailedCreator: typeGetMoviesFetchFailedCreator = (
+  error
+) => {
   return {
-    type: 'GET_MOVIES_FETCH_FAILED',
+    type: "GET_MOVIES_FETCH_FAILED",
     error,
   };
 };
 
-export const showLoading: typeShowLoadingCreator = () => {
+export const showLoadingCreator: typeShowLoadingCreator = () => {
   return {
-    type: 'SHOW_LOADING',
+    type: "SHOW_LOADING",
     isLoading: true,
   };
 };
 
-export const hideLoading: typeHideLoadingCreator = () => {
+export const hideLoadingCreator: typeHideLoadingCreator = () => {
   return {
-    type: 'HIDE_LOADING',
+    type: "HIDE_LOADING",
     isLoading: false,
   };
 };
