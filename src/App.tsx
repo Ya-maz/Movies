@@ -6,7 +6,9 @@ import Author from "./../src/components/Pages/Author/Author";
 
 const App: React.FC = () => {
   return (
-    <div>
+    <div style={{
+      background: '#02203efc',
+      height: '100vh'}}>
       <Navigation />
 
       <Switch>

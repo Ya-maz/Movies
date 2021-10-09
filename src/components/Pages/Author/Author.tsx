@@ -31,6 +31,7 @@ const Author: React.FC = () => {
         <Card.Link href="#">Another Link</Card.Link>
       </Card.Body>
     </Card>
+    
   );
 };
 export default Author;

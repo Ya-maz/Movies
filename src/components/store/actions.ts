@@ -25,7 +25,7 @@ export const getMoviesFetchSucceedCreator: typeGetMoviesFetchSucceedCreator = (
 ) => {
   return {
     type: "GET_MOVIES_FETCH_SUCCEED",
-    data,
+    payload: data,
   };
 };
 

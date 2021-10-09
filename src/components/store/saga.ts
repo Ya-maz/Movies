@@ -1,4 +1,4 @@
-import { takeEvery, put, call } from "redux-saga/effects";
+import { takeEvery, put, call, ForkEffect, delay } from "redux-saga/effects";
 import {
   getMoviesFetchFailedCreator,
   getMoviesFetchSucceedCreator,
@@ -6,7 +6,7 @@ import {
   showLoadingCreator,
   hideLoadingCreator
 } from "./actions";
-import { api } from "./../../services";
+import { api, falseAPI } from "./../../services";
 import {
   responseType,
   typeGetMoviesFetchRequest,
@@ -20,17 +20,18 @@ type action = typeGetMoviesFetchRequest
 
 
 
-export function* sagaWatcher() {
+export function* sagaWatcher(): Generator<ForkEffect<never>> {
   yield takeEvery(GET_MOVIES_FETCH_REQUESTED, sagaWorker);
 }
 
 function* sagaWorker(action: action) {
   try {
     yield put(showLoadingCreator());
-    const moviesFromServer: responseType = yield call(api, action.url);
+    const moviesFromServer: responseType = yield call(falseAPI, action.url);
     yield put(getMoviesFetchSucceedCreator(moviesFromServer));
     yield put(hideLoadingCreator());
   } catch (error) {
-    yield put(getMoviesFetchFailedCreator(error.message));
+    const result = (error as Error).message; 
+    yield put(getMoviesFetchFailedCreator(result));
   }
 }

@@ -10,7 +10,7 @@ export interface typeGetMoviesFetchRequest {
 }
 export interface typeGetMoviesFetchSucceed {
   type: "GET_MOVIES_FETCH_SUCCEED";
-  data: responseType;
+  payload: responseType;
 }
 export interface typeGetMoviesFetchFailed {
   type: "GET_MOVIES_FETCH_FAILED";

@@ -10,25 +10,25 @@ import {
 } from "./../type/actionsType";
 
 interface typeInitial {
-  data: responseType[];
-  error: string;
+  data: responseType[]
+  // error: string;
 }
-type action = typeGetMoviesFetchSucceed | typeGetMoviesFetchFailed;
+type action = typeGetMoviesFetchSucceed;
 
 const initialState: typeInitial = {
   data: [],
-  error: "null",
+  // error: "null",
 };
 
 export const requestReducer: Reducer<typeInitial, action> = (
   state = initialState,
-  action: any
+  action: action
 ) => {
   switch (action.type) {
     case GET_MOVIES_FETCH_SUCCEED:
-      return { ...state, data: action.payload };
-    case GET_MOVIES_FETCH_FAILED:
-      return { ...state, error: action.payload };
+      return { ...state, data: [...state.data, action.payload] };
+    // case GET_MOVIES_FETCH_FAILED:
+    //   return { ...state, error: action.payload };
     default:
       return state;
   }

@@ -6,3 +6,5 @@ export const rootReducer = combineReducers({
   request: requestReducer,
   loading: loadingAnimationReducer,
 });
+
+export type RootState = ReturnType<typeof rootReducer>
