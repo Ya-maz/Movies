@@ -14,7 +14,7 @@ const App: React.FC = () => {
       <Switch>
         <Route path="/" exact render={() => <Home />} />
         <Route path="/author" exact render={() => <Author />} />
-        {/* <Route path='movie' exact render={() => <Movie />}> */}
+        <Route path='movie' exact render={() => <Movie />}>
       </Switch>
     </div>
   );

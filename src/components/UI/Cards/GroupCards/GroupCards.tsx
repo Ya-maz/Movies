@@ -1,8 +1,8 @@
 import React from "react";
 import { useSelector } from "react-redux";
-import Loader from "../store/Loader/Loader";
-import { RootState } from "../store/reducers/rootReducer";
-import Poster from "./Card/Poster";
+import Loader from "../../../store/Loader/Loader";
+import { RootState } from "../../../store/reducers/rootReducer";
+import Poster from "../Card/Poster";
 import "./GroupCard.css";
 
 const GroupCards: React.FC = () => {

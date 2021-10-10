@@ -1,8 +1,8 @@
 import React from "react";
 import { Card, Button } from "react-bootstrap";
 import { useSelector } from "react-redux";
-import { RootState } from "../../store/reducers/rootReducer";
-import { responseType } from "../../store/type/actionsType";
+import { RootState } from "../../../store/reducers/rootReducer";
+import { responseType } from "../../../store/type/actionsType";
 
 interface PosterProps {
   data: responseType

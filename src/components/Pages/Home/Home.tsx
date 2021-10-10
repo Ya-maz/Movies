@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import InputLineForSearch from "../../Input/Input";
-import GroupCards from "../../Cards/GroupCards";
+import GroupCards from "../../UI/Cards/GroupCards/GroupCards";
 import { getMoviesFetchRequestedCreator } from "../../store/actions";
 import { createRightUrl } from "../../../utils";
 
