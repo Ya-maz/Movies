@@ -3,6 +3,7 @@ import Navigation from "./components/Navigation";
 import { Switch, Route } from "react-router-dom";
 import Home from "./../src/components/Pages/Home/Home";
 import Author from "./../src/components/Pages/Author/Author";
+import Movie from "./components/Pages/Movie/Movie";
 
 const App: React.FC = () => {
   return (
@@ -14,7 +15,7 @@ const App: React.FC = () => {
       <Switch>
         <Route path="/" exact render={() => <Home />} />
         <Route path="/author" exact render={() => <Author />} />
-        <Route path='movie' exact render={() => <Movie />}>
+        <Route path='movie' exact render={() => <Movie />} />
       </Switch>
     </div>
   );

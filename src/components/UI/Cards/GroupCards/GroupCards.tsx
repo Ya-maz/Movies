@@ -14,7 +14,7 @@ const GroupCards: React.FC = () => {
       {Object.keys(data).length === 0 ? (
         <h1>Is empty</h1>
       ) : (
-          data.map((filmInfo, i) => <Poster key={ i + filmInfo.Title } data={ filmInfo}/>)
+          data.map((filmInfo, i) => <Poster key={i} data={ filmInfo}/>)
           // data.map((filmInfo, key) => <Poster
           //   key={key + filmInfo.Title}
           //   title={filmInfo.Title}

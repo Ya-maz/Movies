@@ -2,13 +2,9 @@ import React from "react";
 import { Button, Card, ListGroup, ListGroupItem, Nav } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { LinkContainer } from "react-router-bootstrap";
+import { rightResponseType } from "../../../store/type/actionsType";
 
-interface MainCardProps {
-  [key: string]: string;
-}
-
-
-const MainCard: React.FC<MainCardProps> = (props) => {
+const MainCard: React.FC<rightResponseType> = (props) => {
   return (
     <Card
       style={{
@@ -16,19 +12,20 @@ const MainCard: React.FC<MainCardProps> = (props) => {
         margin: "50px auto",
       }}
     >
-      <Card.Img variant="top" style={{
-        width: "10rem",
-        margin: "15px",
-      }} src={props.state.poster} />
+      <Card.Img
+        variant="top"
+        style={{
+          width: "10rem",
+          margin: "15px",
+        }}
+        src={props.Poster}
+      />
       <Card.Body>
-        <Card.Title>{ props.state.title}</Card.Title>
-        <Card.Text>
-          { props.state.plot }
-        </Card.Text>
+        <Card.Title>{props.Title}</Card.Title>
+        <Card.Text>{props.Plot}</Card.Text>
       </Card.Body>
       <ListGroup className="list-group-flush">
-        {props.state.learning ? props.state.learning.map(learn => <ListGroupItem>{learn}</ListGroupItem>) : null}
-
+        <ListGroupItem></ListGroupItem>
       </ListGroup>
       <Card.Body>
         <Nav.Link href="/home">
@@ -38,7 +35,6 @@ const MainCard: React.FC<MainCardProps> = (props) => {
         </Nav.Link>
       </Card.Body>
     </Card>
-    
   );
 };
 export default MainCard;

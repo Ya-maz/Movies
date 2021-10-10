@@ -1,19 +1,12 @@
 import React from "react";
-import { Card, Button } from "react-bootstrap";
+import { Card, Button, Nav } from "react-bootstrap";
 import { useSelector } from "react-redux";
+import { LinkContainer } from "react-router-bootstrap";
 import { RootState } from "../../../store/reducers/rootReducer";
-import { responseType } from "../../../store/type/actionsType";
+import { rightResponseType } from "../../../store/type/actionsType";
 
 interface PosterProps {
-  data: responseType
-  // key: string,
-  // title: string,
-  // year: string,
-  // poster: string,
-  // runtime: string,
-  // released: string,
-  // rating: <Array<{Source: string,Value: string}>>
-  
+  data: rightResponseType
 }
 
 const Poster: React.FC<PosterProps> = (props) => {
@@ -24,9 +17,13 @@ const Poster: React.FC<PosterProps> = (props) => {
         <Card.Title>{props.data.Title}</Card.Title>
         <Card.Text> Year: {props.data.Year}</Card.Text>
         <Card.Text> Released: {props.data.Released}</Card.Text>
-        <Card.Text> Rating: { props.data.rating}</Card.Text>
+        <Card.Text> Rating: { props.data.Ratings}</Card.Text>
         <Card.Text> Runtime: { props.data.Runtime}</Card.Text>
-        <Button variant="primary">Go somewhere</Button>
+        <Nav.Link href="/author">
+            <LinkContainer to="/author">
+              <Button>Author</Button>
+            </LinkContainer>
+          </Nav.Link>
       </Card.Body>
     </Card>
   );

@@ -4,13 +4,13 @@ import {
   GET_MOVIES_FETCH_FAILED,
 } from "./../actions";
 import {
-  responseType,
+  rightResponseType,
   typeGetMoviesFetchSucceed,
   typeGetMoviesFetchFailed,
 } from "./../type/actionsType";
 
 interface typeInitial {
-  data: responseType[]
+  data: rightResponseType[]
   // error: string;
 }
 type action = typeGetMoviesFetchSucceed;

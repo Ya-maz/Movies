@@ -1,11 +1,10 @@
 import React from "react";
-import { Card, ListGroup, ListGroupItem } from "react-bootstrap";
-// import "bootstrap/dist/css/bootstrap.min.css";
-
+import { useSelector } from "react-redux";
+import { RootState } from "../../store/reducers/rootReducer";
+import MainCard from "../../UI/Cards/MainCard/MainCard";
 
 const Movie: React.FC = () => {
-  return (
-    
-  );
+  const data = useSelector((state: RootState) => state.request.data);
+  return <MainCard {...data} />;
 };
 export default Movie;
