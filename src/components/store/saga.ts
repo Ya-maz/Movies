@@ -7,23 +7,22 @@ import {
   hideLoadingCreator,
   GET_MOVIE_BY_ID_FETCH_REQUESTED,
   getMovieByIdFetchSucceedCreator,
+  JUST_SORT_IT,
+  pushPayloadToTypeCreator,
 } from "./actions";
-import { api, falseAPI } from "./../../services";
+import { api } from "./../../services";
 import {
-  responseType,
   typeGetMoviesFetchRequest,
-  typeGetMoviesFetchFailed,
-  typeGetMoviesFetchSucceed,
-  typeHideLoadingCreator,
-  typeShowLoadingCreator,
   responseSearchType,
   responseByIdType,
   typeGetMovieByIdFetchRequest,
+  typeJustSortIt,
 } from "./type/actionsType";
 
 export function* sagaWatcher(): Generator<ForkEffect<never>> {
   yield takeEvery(GET_MOVIES_FETCH_REQUESTED, sagaWorkerSearch);
   yield takeEvery(GET_MOVIE_BY_ID_FETCH_REQUESTED, sagaWorkerById);
+  yield takeEvery(JUST_SORT_IT, sagaWorkerSort);
 }
 
 function* sagaWorkerSearch(action: typeGetMoviesFetchRequest) {
@@ -49,3 +48,14 @@ function* sagaWorkerById(action: typeGetMovieByIdFetchRequest) {
     yield put(getMoviesFetchFailedCreator(result));
   }
 }
+
+function* sagaWorkerSort(action: typeJustSortIt) {
+  try {
+    yield put(pushPayloadToTypeCreator(action.payload))
+  }
+  catch (error) {
+    const result = (error as Error).message;
+    yield put(getMoviesFetchFailedCreator(result));
+  }
+}
+

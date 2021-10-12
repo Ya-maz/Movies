@@ -81,6 +81,31 @@ export interface typeHideLoading {
   type: "HIDE_LOADING";
 }
 
+//type action for sort --> Selecet/option
+export interface typeSortDefault {
+  type: "SORT/DEFAULT";
+}
+export interface typeSortReverse {
+  type: "SORT/REVERSE";
+}
+export interface typeSortByYear {
+  type: "SORT/BY_YEAR";
+}
+export interface typeSortByYearReverse {
+  type: "SORT/BY_YEAR_REVERSE";
+}
+
+export interface typeJustSortIt {
+  type: "JUST_SORT_IT";
+  payload: payload;
+}
+
+export type payload =
+  | "SORT/DEFAULT"
+  | "SORT/REVERSE"
+  | "SORT/BY_YEAR"
+  | "SORT/BY_YEAR_REVERSE";
+
 //actionCreatorType
 export type typeGetMoviesFetchRequestCreator = (
   url: string
@@ -105,3 +130,14 @@ export type typeGetMoviesFetchFailedCreator = (
 export type typeShowLoadingCreator = () => typeShowLoading;
 
 export type typeHideLoadingCreator = () => typeHideLoading;
+
+// export type typeSortDefaultCreator = () => typeSortDefault;
+// export type typeSortReverseCreator = () => typeSortReverse;
+// export type typeSortByYearCreator = () => typeSortByYear;
+// export type typeSortByYearReverseCreator = () => typeSortByYearReverse;
+
+export type typeJustSortItCreator = (value: payload) => typeJustSortIt;
+
+export type typePushPayloadToTypeCreator = (
+  payload: payload
+) => typeSortDefault | typeSortReverse | typeSortByYear | typeSortByYearReverse;

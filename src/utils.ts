@@ -10,3 +10,4 @@ export const createSearchUrl = (text: string) => {
 export const createTitleUrl = (text: string) => {
   return `${URL}?i=${text}${API_KEY}`;
 };
+

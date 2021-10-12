@@ -2,11 +2,12 @@ import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import InputLineForSearch from "../../UI/Input/Input";
 import GroupCards from "../../UI/Cards/GroupCards/GroupCards";
-import { getMoviesFetchRequestedCreator } from "../../store/actions";
+import { getMoviesFetchRequestedCreator, justSortItCreator } from "../../store/actions";
 import { createSearchUrl } from "../../../utils";
 import './Home.css';
 import SortForm from "../../UI/SortForm/SortForm";
 import { RootState } from "../../store/reducers/rootReducer";
+import { payload } from "../../store/type/actionsType";
 
 const Home: React.FC = () => {
   const [title, setTitle] = useState<string>("");
@@ -31,9 +32,8 @@ const Home: React.FC = () => {
 
   const dropHandler = (event: React.ChangeEvent<HTMLSelectElement>): void => {
     const { target: { value } } = event;
-    switch (value) {
-      case 'sort': copyArray.sort()
-    }
+    dispatch(justSortItCreator(value as payload))
+  
   }
   return (
     <div>
