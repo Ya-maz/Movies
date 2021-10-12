@@ -19,7 +19,7 @@ interface InputLineForSearchProps {
 
 const InputLineForSearch: React.FC<InputLineForSearchProps> = (props) => {
   return (
-    <Container className="p-5 mt-5 px800">
+    <Container className="p-3 mt-4 px800">
       <Row>
         <Col>
           <InputGroup className="mb-3">

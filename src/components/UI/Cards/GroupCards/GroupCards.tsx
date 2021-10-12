@@ -4,7 +4,7 @@ import Loader from "../../../store/Loader/Loader";
 import { RootState } from "../../../store/reducers/rootReducer";
 import { Search } from "../../../store/type/actionsType";
 import { useDispatch } from "react-redux";
-import Poster from "../../../UI/Cards/Card/Poster";
+import Poster from "../Poster/Poster";
 import "./GroupCard.css";
 import { createTitleUrl } from "../../../../utils";
 import { getMovieByIdFetchRequestedCreator } from "../../../store/actions";

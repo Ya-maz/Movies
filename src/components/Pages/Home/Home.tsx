@@ -1,13 +1,17 @@
 import React, { useState } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import InputLineForSearch from "../../UI/Input/Input";
-import GroupCards from "./GroupCards/GroupCards";
+import GroupCards from "../../UI/Cards/GroupCards/GroupCards";
 import { getMoviesFetchRequestedCreator } from "../../store/actions";
 import { createSearchUrl } from "../../../utils";
+import './Home.css';
+import SortForm from "../../UI/SortForm/SortForm";
+import { RootState } from "../../store/reducers/rootReducer";
 
 const Home: React.FC = () => {
   const [title, setTitle] = useState<string>("");
   const dispatch = useDispatch();
+  const copyArray = useSelector((state: RootState) => state.search.data.Search);
 
   const inputHandler = (event: React.ChangeEvent<HTMLInputElement>): void => {
     setTitle(event.target.value);
@@ -25,8 +29,17 @@ const Home: React.FC = () => {
     setTitle("");
   };
 
+  const dropHandler = (event: React.ChangeEvent<HTMLSelectElement>): void => {
+    const { target: { value } } = event;
+    switch (value) {
+      case 'sort': copyArray.sort()
+    }
+  }
   return (
     <div>
+      <div className="form">
+        <SortForm dropHandler={ dropHandler }/>
+      </div>
       <InputLineForSearch
         inputHandler={inputHandler}
         title={title}

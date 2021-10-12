@@ -1,7 +1,6 @@
 import React from "react";
 import { Navbar, Container, Nav, Button } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
-// import { NavLink } from 'react-router-dom';
 import { LinkContainer } from "react-router-bootstrap";
 
 const Navigation: React.FC = () => {
@@ -13,6 +12,11 @@ const Navigation: React.FC = () => {
           <Nav.Link href="/author">
             <LinkContainer to="/author">
               <Button>Author</Button>
+            </LinkContainer>
+          </Nav.Link>
+          <Nav.Link href="/team">
+            <LinkContainer to="/team">
+              <Button>Team</Button>
             </LinkContainer>
           </Nav.Link>
         </Nav>

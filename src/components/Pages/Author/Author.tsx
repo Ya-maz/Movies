@@ -1,9 +1,9 @@
 import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import AuthorImg from "./../../../assets/Untitled.svg";
-import MainCard from "../../UI/Cards/MainCard/MainCard";
 import { Button, Card, ListGroup, ListGroupItem, Nav } from "react-bootstrap";
 import { LinkContainer } from "react-router-bootstrap";
+import './Author.css'
 
 const Author: React.FC = () => {
   const state = {
@@ -14,19 +14,12 @@ const Author: React.FC = () => {
 
   }
   return (
-    <Card
-    style={{
-      width: "40rem",
-      margin: "50px auto",
-    }}
+    <Card className='card'
   >
     <Card.Img
-      variant="top"
-      style={{
-        width: "10rem",
-        margin: "15px",
-      }}
-      src={state.poster}
+        variant="top"
+        src={state.poster}
+        className='image'
     />
     <Card.Body>
       <Card.Title>{state.title}</Card.Title>
@@ -38,11 +31,15 @@ const Author: React.FC = () => {
         <ListGroupItem>{state.learning[2]}</ListGroupItem>
     </ListGroup>
     <Card.Body>
-      <Nav.Link href="/home">
-        <LinkContainer to="/home">
-          <Button>Home</Button>
+      <Nav.Link href="/">
+        <LinkContainer to="/">
+          <Button className='button'>Home</Button>
+          </LinkContainer>
+          <LinkContainer to="/team">
+          <Button className='button'>Team</Button>
         </LinkContainer>
-      </Nav.Link>
+        </Nav.Link>
+        
     </Card.Body>
   </Card>    
   );
