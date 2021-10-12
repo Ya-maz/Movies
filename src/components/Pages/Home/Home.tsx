@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import InputLineForSearch from "../../UI/Input/Input";
-import GroupCards from "../../UI/Cards/GroupCards/GroupCards";
+import GroupCards from "./GroupCards/GroupCards";
 import { getMoviesFetchRequestedCreator } from "../../store/actions";
-import { createRightUrl } from "../../../utils";
+import { createSearchUrl } from "../../../utils";
 
 const Home: React.FC = () => {
   const [title, setTitle] = useState<string>("");
@@ -15,16 +15,15 @@ const Home: React.FC = () => {
 
   const enterPressHandler = (event: React.KeyboardEvent): void => {
     if (event.key === "Enter") {
-      dispatch(getMoviesFetchRequestedCreator(createRightUrl(title)));
+      dispatch(getMoviesFetchRequestedCreator(createSearchUrl(title)));
       setTitle("");
     }
   };
 
   const buttonHandler = (): void => {
-    dispatch(getMoviesFetchRequestedCreator(createRightUrl(title)));
+    dispatch(getMoviesFetchRequestedCreator(createSearchUrl(title)));
     setTitle("");
   };
-
 
   return (
     <div>

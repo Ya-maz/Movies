@@ -1,34 +1,63 @@
 import { Reducer } from "redux";
 import {
   GET_MOVIES_FETCH_SUCCEED,
-  GET_MOVIES_FETCH_FAILED,
 } from "./../actions";
 import {
-  rightResponseType,
   typeGetMoviesFetchSucceed,
-  typeGetMoviesFetchFailed,
+  responseSearchType,
 } from "./../type/actionsType";
 
 interface typeInitial {
-  data: rightResponseType[]
-  // error: string;
+  data: responseSearchType
 }
-type action = typeGetMoviesFetchSucceed;
+type actions = typeGetMoviesFetchSucceed;
 
 const initialState: typeInitial = {
-  data: [],
-  // error: "null",
+  data: {
+    Response: "",
+    Search: [],
+    totalResults: "",
+  },
+  // movieById: {
+  //   Title: "",
+  //   Year: "",
+  //   Rated: "",
+  //   Released: "",
+  //   Runtime: "",
+  //   Genre: "",
+  //   Director: "",
+  //   Writer: "",
+  //   Actors: "",
+  //   Plot: "",
+  //   Language: "",
+  //   Country: "",
+  //   Awards: "",
+  //   Poster: "",
+  //   Ratings: [
+  //     { Source: "", Value: "" },
+  //     { Source: "", Value: "" },
+  //     { Source: "", Value: "" },
+  //   ],
+  //   Metascore: "",
+  //   imdbRating: "",
+  //   imdbVotes: "",
+  //   imdbID: "",
+  //   Type: "",
+  //   DVD: "",
+  //   BoxOffice: "",
+  //   Production: "",
+  //   Website: "",
+  //   Response: "",
+  // },
 };
 
-export const requestReducer: Reducer<typeInitial, action> = (
+export const requestReducer: Reducer<typeInitial, actions> = (
   state = initialState,
-  action: action
+  action
 ) => {
   switch (action.type) {
     case GET_MOVIES_FETCH_SUCCEED:
-      return { ...state, data: [...state.data, action.payload] };
-    // case GET_MOVIES_FETCH_FAILED:
-    //   return { ...state, error: action.payload };
+      return { ...state, data: action.payload };
     default:
       return state;
   }

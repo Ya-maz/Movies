@@ -1,5 +1,12 @@
 import React from "react";
-import { Container, Col, Row, InputGroup, FormControl, Button } from "react-bootstrap";
+import {
+  Container,
+  Col,
+  Row,
+  InputGroup,
+  FormControl,
+  Button,
+} from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./Input.css";
 
@@ -7,7 +14,7 @@ interface InputLineForSearchProps {
   inputHandler(event: React.ChangeEvent<HTMLInputElement>): void;
   title: string;
   enterPressHandler(event: React.KeyboardEvent): void;
-  buttonHandler(): void
+  buttonHandler(): void;
 }
 
 const InputLineForSearch: React.FC<InputLineForSearchProps> = (props) => {
