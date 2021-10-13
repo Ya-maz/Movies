@@ -3,7 +3,8 @@ export async function api<T>(url: string): Promise<T> {
   if (!response.ok) {
     throw new Error(response.statusText);
   }
-  return await response.json();
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-return
+  return await response.json() as Promise<T>;
 }
 
 export async function falseAPI(url: string) {

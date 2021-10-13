@@ -1,10 +1,10 @@
 import { GET_MOVIES_FETCH_SUCCEED, SORT_BY_YEAR, SORT_BY_YEAR_REVERSE, SORT_DEFAULT, SORT_REVERSE } from "../actions";
-import { typeGetMoviesFetchSucceed, responseSearchType } from "../type/actionsType";
+import { typeGetMoviesFetchSucceed, responseSearchType, typeSortDefault, typeSortReverse, typeSortByYear, typeSortByYearReverse } from "../type/actionsType";
 
 interface typeInitial {
   data: responseSearchType;
 }
-type actions = typeGetMoviesFetchSucceed;
+type actions = typeGetMoviesFetchSucceed | typeSortDefault | typeSortReverse | typeSortByYear | typeSortByYearReverse;
 
 const initialState: typeInitial = {
   data: {
@@ -78,7 +78,7 @@ export const requestReducer = (state = initialState, action: actions): typeIniti
           data: {
             ...state.data,
             Search: state.data.Search.concat().sort(
-              (a: { Year: string }, b: { Year: string }) => Number(b.Year) - Number(a.Year)
+              (a: { Year: string }, b: { Year: string }) => Number(a.Year) - Number(b.Year)
             ),
         
           }

@@ -7,7 +7,7 @@ import Movie from "./components/Pages/Movie/Movie";
 import Team from "./components/Pages/Team/Team";
 
 const App: React.FC = () => (
-    <div>
+  <div>
       <Navigation />
 
       <Switch>

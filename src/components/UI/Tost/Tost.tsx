@@ -1,22 +1,24 @@
 import React from "react";
 import { Toast } from "react-bootstrap";
+import  Fire  from './../../../assets/fire.svg';
+import './Tost.css';
 
 interface typeProps {
   show: boolean;
   toggleShow():void;
 }
 const Tost: React.FC<typeProps> = (props) => (
-  <Toast show={props.show} onClose={props.toggleShow}>
+  <Toast className='toast' show={props.show} onClose={props.toggleShow}>
           <Toast.Header>
-            <img
-              src="holder.js/20x20?text=%20"
-              className="rounded me-2"
+      <img
+        src={ Fire }
+              className="rounded me-2 img"
               alt="img"
             />
-            <strong className="me-auto">Bootstrap</strong>
-            <small>11 mins ago</small>
+            <strong className="me-auto">Oops, the site is going down soon!</strong>
+            <small>1 min ago</small>
           </Toast.Header>
-          <Toast.Body>Find what to see today</Toast.Body>
+          <Toast.Body>Hurry up! Нерасторопный</Toast.Body>
         </Toast>
   );
 

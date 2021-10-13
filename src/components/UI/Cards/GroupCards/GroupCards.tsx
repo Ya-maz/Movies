@@ -13,9 +13,7 @@ const GroupCards: React.FC = () => {
   const dispatch = useDispatch();
   const data = useSelector((state: RootState) => state.search.data.Search);
   const isLoading = useSelector((state: RootState) => state.loading.loading);
-  console.log(data);
   const buttonHandler = (tt: string): void => {
-    console.log(tt);
     dispatch(getMovieByIdFetchRequestedCreator(createTitleUrl(tt)));
   };
   return (
@@ -24,7 +22,6 @@ const GroupCards: React.FC = () => {
       {Object.keys(data).length === 0 ? (
         <h1>Here is empty</h1>
       ) : (
-        // <h1>Soon...</h1>)
         data.map((filmInfo: Search, i: number) => <Poster key={i} {...filmInfo} buttonHandler={buttonHandler} />)
       )}
     </div>
