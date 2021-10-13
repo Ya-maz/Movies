@@ -7,7 +7,7 @@ import { createSearchUrl } from "../../../utils";
 import "./Home.css";
 import SortForm from "../../UI/SortForm/SortForm";
 import { RootState } from "../../store/reducers/rootReducer";
-import { payload } from "../../store/type/actionsType";
+import { typePayload } from "../../store/type/actionsType";
 import Tost from "../../UI/Tost/Tost";
 
 const Home: React.FC = () => {
@@ -40,7 +40,7 @@ const Home: React.FC = () => {
     const {
       target: { value },
     } = event;
-    dispatch(justSortItCreator(value as payload));
+    dispatch(justSortItCreator(value as typePayload));
   };
   return (
     <div>
@@ -53,7 +53,7 @@ const Home: React.FC = () => {
         enterPressHandler={enterPressHandler}
         buttonHandler={buttonHandler}
       />
-      {Boolean(Number(listIsEmpry)) ? <GroupCards /> : <Tost show={show} toggleShow={ toggleShow}/>}
+      {Number(listIsEmpry) ? <GroupCards /> : <Tost show={show} toggleShow={ toggleShow}/>}
     </div>
   );
 };

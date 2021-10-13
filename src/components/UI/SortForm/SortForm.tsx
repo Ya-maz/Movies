@@ -6,8 +6,7 @@ interface PropsType {
   dropHandler(event: React.ChangeEvent<HTMLSelectElement>): void;
 }
 
-const SortForm: React.FC<PropsType> = (props) => {
-  return (
+const SortForm: React.FC<PropsType> = (props) => (
     <Form>
       <Form.Select onChange={props.dropHandler} size="sm" aria-label="Floating label select example">
         <option>Sort by</option>
@@ -18,6 +17,5 @@ const SortForm: React.FC<PropsType> = (props) => {
       </Form.Select>
     </Form>
   );
-};
 
 export default SortForm;

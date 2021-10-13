@@ -3,8 +3,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { Accordion, Badge } from "react-bootstrap";
 import "./Team.css";
 
-const Team: React.FC = () => {
-  return (
+const Team: React.FC = () => (
     <Accordion defaultActiveKey="0" className="team">
       <Accordion.Item eventKey="0">
         <Accordion.Header className="header">
@@ -64,5 +63,4 @@ const Team: React.FC = () => {
       </Accordion.Item>
     </Accordion>
   );
-};
 export default Team;

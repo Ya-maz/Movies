@@ -1,5 +1,5 @@
-import { GET_MOVIES_FETCH_SUCCEED, SORT_BY_YEAR, SORT_BY_YEAR_REVERSE, SORT_DEFAULT, SORT_REVERSE } from "./../actions";
-import { typeGetMoviesFetchSucceed, responseSearchType } from "./../type/actionsType";
+import { GET_MOVIES_FETCH_SUCCEED, SORT_BY_YEAR, SORT_BY_YEAR_REVERSE, SORT_DEFAULT, SORT_REVERSE } from "../actions";
+import { typeGetMoviesFetchSucceed, responseSearchType } from "../type/actionsType";
 
 interface typeInitial {
   data: responseSearchType;

@@ -36,16 +36,16 @@ export interface Search {
 
 export interface responseSearchType {
   Response: string;
-  Search: Array<Search>;
+  Search: Search[];
   totalResults: string;
 }
 
-//responseType
+// responseType
 export interface responseType {
   [key: string]: string;
 }
 
-//actionType
+// actionType
 export interface typeGetMoviesFetchRequest {
   type: "GET_MOVIES_FETCH_REQUESTED";
   url: string;
@@ -77,7 +77,7 @@ export interface typeHideLoading {
   type: "HIDE_LOADING";
 }
 
-//type action for sort --> Selecet/option
+// type action for sort --> Selecet/option
 export interface typeSortDefault {
   type: "SORT/DEFAULT";
 }
@@ -93,12 +93,12 @@ export interface typeSortByYearReverse {
 
 export interface typeJustSortIt {
   type: "JUST_SORT_IT";
-  payload: payload;
+  payload: typePayload;
 }
 
-export type payload = "SORT/DEFAULT" | "SORT/REVERSE" | "SORT/BY_YEAR" | "SORT/BY_YEAR_REVERSE";
+export type typePayload = "SORT/DEFAULT" | "SORT/REVERSE" | "SORT/BY_YEAR" | "SORT/BY_YEAR_REVERSE";
 
-//actionCreatorType
+// actionCreatorType
 export type typeGetMoviesFetchRequestCreator = (url: string) => typeGetMoviesFetchRequest;
 
 export type typeGetMovieByIdFetchRequestCreator = (url: string) => typeGetMovieByIdFetchRequest;
@@ -118,8 +118,8 @@ export type typeHideLoadingCreator = () => typeHideLoading;
 // export type typeSortByYearCreator = () => typeSortByYear;
 // export type typeSortByYearReverseCreator = () => typeSortByYearReverse;
 
-export type typeJustSortItCreator = (value: payload) => typeJustSortIt;
+export type typeJustSortItCreator = (value: typePayload) => typeJustSortIt;
 
 export type typePushPayloadToTypeCreator = (
-  payload: payload
+  payload: typePayload
 ) => typeSortDefault | typeSortReverse | typeSortByYear | typeSortByYearReverse;

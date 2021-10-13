@@ -4,8 +4,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { LinkContainer } from "react-router-bootstrap";
 import { responseByIdType } from "../../../store/type/actionsType";
 
-const MainCard: React.FC<responseByIdType> = (props) => {
-  return (
+const MainCard: React.FC<responseByIdType> = (props) => (
     <Card
       style={{
         width: "40rem",
@@ -44,5 +43,4 @@ const MainCard: React.FC<responseByIdType> = (props) => {
       </Card.Body>
     </Card>
   );
-};
 export default MainCard;

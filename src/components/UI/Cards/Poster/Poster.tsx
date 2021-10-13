@@ -14,8 +14,7 @@ interface PropsType {
   buttonHandler(tt: string): void;
 }
 
-const Poster: React.FC<PropsType> = (props) => {
-  return (
+const Poster: React.FC<PropsType> = (props) => (
     <Card style={{ width: "14rem" }}>
       <Card.Img variant="top" src={props.Poster} />
       <Card.Body>
@@ -31,6 +30,5 @@ const Poster: React.FC<PropsType> = (props) => {
       </Card.Body>
     </Card>
   );
-};
 
 export default Poster;

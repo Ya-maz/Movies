@@ -1,6 +1,6 @@
 import { Reducer } from "redux";
-import { SHOW_LOADING, HIDE_LOADING } from "./../actions";
-import { typeHideLoading, typeShowLoading } from "./../type/actionsType";
+import { SHOW_LOADING, HIDE_LOADING } from "../actions";
+import { typeHideLoading, typeShowLoading } from "../type/actionsType";
 
 interface typeInitial {
   loading: boolean;

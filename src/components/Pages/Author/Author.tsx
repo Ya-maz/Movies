@@ -1,8 +1,8 @@
 import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
-import AuthorImg from "./../../../assets/Untitled.svg";
 import { Button, Card, ListGroup, ListGroupItem, Nav } from "react-bootstrap";
 import { LinkContainer } from "react-router-bootstrap";
+import AuthorImg from "../../../assets/Untitled.svg";
 import "./Author.css";
 
 const Author: React.FC = () => {

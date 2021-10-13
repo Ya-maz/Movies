@@ -1,9 +1,9 @@
 import React from "react";
-import { useSelector } from "react-redux";
+import { useSelector , useDispatch } from "react-redux";
 import Loader from "../../Loader/Loader";
 import { RootState } from "../../../store/reducers/rootReducer";
 import { Search } from "../../../store/type/actionsType";
-import { useDispatch } from "react-redux";
+
 import Poster from "../Poster/Poster";
 import "./GroupCard.css";
 import { createTitleUrl } from "../../../../utils";

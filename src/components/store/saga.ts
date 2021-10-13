@@ -1,4 +1,5 @@
 import { takeEvery, put, call, ForkEffect } from "redux-saga/effects";
+import { api } from "../../services";
 import {
   getMoviesFetchFailedCreator,
   getMoviesFetchSucceedCreator,
@@ -10,7 +11,6 @@ import {
   JUST_SORT_IT,
   pushPayloadToTypeCreator,
 } from "./actions";
-import { api } from "./../../services";
 import {
   typeGetMoviesFetchRequest,
   responseSearchType,

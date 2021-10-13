@@ -10,8 +10,7 @@ interface InputLineForSearchProps {
   buttonHandler(): void;
 }
 
-const InputLineForSearch: React.FC<InputLineForSearchProps> = (props) => {
-  return (
+const InputLineForSearch: React.FC<InputLineForSearchProps> = (props) => (
     <Container className="p-3 mt-4 px800">
       <Row>
         <Col>
@@ -32,6 +31,5 @@ const InputLineForSearch: React.FC<InputLineForSearchProps> = (props) => {
       </Row>
     </Container>
   );
-};
 
 export default InputLineForSearch;
