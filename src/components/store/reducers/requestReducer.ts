@@ -17,7 +17,7 @@ const initialState: typeInitial = {
     Search: [
       {
         Poster: "",
-        Title: "title",
+        Title: "",
         Type: "",
         Year: "",
         imdbID: "",
@@ -27,39 +27,57 @@ const initialState: typeInitial = {
   },
 };
 
-export const requestReducer: Reducer<typeInitial, actions> = (
+export const requestReducer = (
   state = initialState,
-  action
-) => {
+  action: actions
+):typeInitial => {
   switch (action.type) {
     case GET_MOVIES_FETCH_SUCCEED:
       return { ...state, data: action.payload };
     case SORT_DEFAULT:
       return {
         ...state,
-        data: state.data.Search.sort(
-          (a: Search, b: Search): boolean => a.Title > b.Title
-        ),
+        data: state.data.Search.concat().sort(
+          (a: { Title: string }, b: { Title: string }) => {
+            if (a.Title > b.Title) {
+              return 1;
+          }
+      
+          if (a.Title < b.Title) {
+              return -1;
+          }
+      
+          return 0;
+          }),
       };
       case SORT_REVERSE:
         return {
           ...state,
-          data: state.data.Search.sort(
-            (a: Search, b: Search): boolean => !(a[Title] > b[Title])
-          ),
-      };
+          data: state.data.Search.concat().sort(
+            (a: { Title: string }, b: { Title: string }) => {
+              if (a.Title > b.Title) {
+                return -1;
+            }
+        
+            if (a.Title < b.Title) {
+                return 1;
+            }
+        
+            return 0;
+            }),
+        };
       case SORT_BY_YEAR:
       return {
         ...state,
-        data: state.data.Search.sort(
-          (a: Search, b: Search): boolean =>  Number(b[Year]) - Number(a[Year])
+        data: state.data.Search.concat().sort(
+          (a: { Year: string }, b: {Year: string}) =>  Number(b.Year) - Number(a.Year)
         ),
       };
       case SORT_BY_YEAR_REVERSE:
         return {
           ...state,
-          data: state.data.Search.sort(
-            (a: Search, b: Search): boolean =>  Number(a[Year]) - Number(b[Year]) 
+          data: state.data.Search.concat().sort(
+            (a: { Year: string }, b: {Year: string}) =>  Number(b.Year) - Number(a.Year)
           ),
         };
     default:
