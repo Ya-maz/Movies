@@ -11,10 +11,7 @@ import "./index.css";
 import App from "./App";
 
 const saga = createSagaMiddleware();
-const store = createStore(
-  rootReducer,
-  composeWithDevTools(applyMiddleware(saga))
-);
+const store = createStore(rootReducer, composeWithDevTools(applyMiddleware(saga)));
 
 saga.run(sagaWatcher);
 

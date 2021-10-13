@@ -51,11 +51,9 @@ function* sagaWorkerById(action: typeGetMovieByIdFetchRequest) {
 
 function* sagaWorkerSort(action: typeJustSortIt) {
   try {
-    yield put(pushPayloadToTypeCreator(action.payload))
-  }
-  catch (error) {
+    yield put(pushPayloadToTypeCreator(action.payload));
+  } catch (error) {
     const result = (error as Error).message;
     yield put(getMoviesFetchFailedCreator(result));
   }
 }
-

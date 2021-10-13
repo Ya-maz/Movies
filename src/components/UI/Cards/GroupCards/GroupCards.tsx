@@ -1,6 +1,6 @@
 import React from "react";
 import { useSelector } from "react-redux";
-import Loader from "../../../store/Loader/Loader";
+import Loader from "../../Loader/Loader";
 import { RootState } from "../../../store/reducers/rootReducer";
 import { Search } from "../../../store/type/actionsType";
 import { useDispatch } from "react-redux";
@@ -15,22 +15,18 @@ const GroupCards: React.FC = () => {
   const isLoading = useSelector((state: RootState) => state.loading.loading);
   console.log(data);
   const buttonHandler = (tt: string): void => {
-    console.log(tt)
+    console.log(tt);
     dispatch(getMovieByIdFetchRequestedCreator(createTitleUrl(tt)));
   };
   return (
     <div className="group">
       {isLoading ? <Loader /> : null}
-      {
-        Object.keys(data).length === 0 ? (
-          <h1>Here is empty</h1>
-        ) : (
-          // <h1>Soon...</h1>)
-          data.map((filmInfo: Search, i: number) => (
-            <Poster key={i} {...filmInfo} buttonHandler={buttonHandler} />
-          ))
-        )
-      }
+      {Object.keys(data).length === 0 ? (
+        <h1>Here is empty</h1>
+      ) : (
+        // <h1>Soon...</h1>)
+        data.map((filmInfo: Search, i: number) => <Poster key={i} {...filmInfo} buttonHandler={buttonHandler} />)
+      )}
     </div>
   );
 };

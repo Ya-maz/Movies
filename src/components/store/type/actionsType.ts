@@ -13,11 +13,7 @@ export interface responseByIdType {
   Country: string;
   Awards: string;
   Poster: string;
-  Ratings: [
-    { Source: string; Value: string },
-    { Source: string; Value: string },
-    { Source: string; Value: string }
-  ];
+  Ratings: [{ Source: string; Value: string }, { Source: string; Value: string }, { Source: string; Value: string }];
   Metascore: string;
   imdbRating: string;
   imdbVotes: string;
@@ -100,32 +96,18 @@ export interface typeJustSortIt {
   payload: payload;
 }
 
-export type payload =
-  | "SORT/DEFAULT"
-  | "SORT/REVERSE"
-  | "SORT/BY_YEAR"
-  | "SORT/BY_YEAR_REVERSE";
+export type payload = "SORT/DEFAULT" | "SORT/REVERSE" | "SORT/BY_YEAR" | "SORT/BY_YEAR_REVERSE";
 
 //actionCreatorType
-export type typeGetMoviesFetchRequestCreator = (
-  url: string
-) => typeGetMoviesFetchRequest;
+export type typeGetMoviesFetchRequestCreator = (url: string) => typeGetMoviesFetchRequest;
 
-export type typeGetMovieByIdFetchRequestCreator = (
-  url: string
-) => typeGetMovieByIdFetchRequest;
+export type typeGetMovieByIdFetchRequestCreator = (url: string) => typeGetMovieByIdFetchRequest;
 
-export type typeGetMoviesFetchSucceedCreator = (
-  data: responseSearchType
-) => typeGetMoviesFetchSucceed;
+export type typeGetMoviesFetchSucceedCreator = (data: responseSearchType) => typeGetMoviesFetchSucceed;
 
-export type typeGetMovieByIDFetchSucceedCreator = (
-  movie: responseByIdType
-) => typeGetMovieByIdFetchSucceed;
+export type typeGetMovieByIDFetchSucceedCreator = (movie: responseByIdType) => typeGetMovieByIdFetchSucceed;
 
-export type typeGetMoviesFetchFailedCreator = (
-  error: string
-) => typeGetMoviesFetchFailed;
+export type typeGetMoviesFetchFailedCreator = (error: string) => typeGetMoviesFetchFailed;
 
 export type typeShowLoadingCreator = () => typeShowLoading;
 

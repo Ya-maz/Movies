@@ -25,9 +25,7 @@ const Poster: React.FC<PropsType> = (props) => {
         </Card.Text>
         <Nav.Link href="/movie">
           <LinkContainer to="/movie">
-            <Button onClick={() => props.buttonHandler(props.imdbID)}>
-              Movie
-            </Button>
+            <Button onClick={() => props.buttonHandler(props.imdbID)}>Movie</Button>
           </LinkContainer>
         </Nav.Link>
       </Card.Body>

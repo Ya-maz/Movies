@@ -1,12 +1,5 @@
 import React from "react";
-import {
-  Container,
-  Col,
-  Row,
-  InputGroup,
-  FormControl,
-  Button,
-} from "react-bootstrap";
+import { Container, Col, Row, InputGroup, FormControl, Button } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./Input.css";
 
@@ -31,11 +24,7 @@ const InputLineForSearch: React.FC<InputLineForSearchProps> = (props) => {
               onChange={props.inputHandler}
               onKeyPress={props.enterPressHandler}
             />
-            <Button
-              variant="outline-primary"
-              id="button-addon2"
-              onClick={props.buttonHandler}
-            >
+            <Button variant="outline-primary" id="button-addon2" onClick={props.buttonHandler}>
               Search
             </Button>
           </InputGroup>

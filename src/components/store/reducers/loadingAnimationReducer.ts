@@ -12,10 +12,7 @@ const initialState: typeInitial = {
   loading: false,
 };
 
-export const loadingAnimationReducer: Reducer<typeInitial, actions> = (
-  state = initialState,
-  action
-) => {
+export const loadingAnimationReducer: Reducer<typeInitial, actions> = (state = initialState, action) => {
   switch (action.type) {
     case SHOW_LOADING:
       return { ...state, loading: true };

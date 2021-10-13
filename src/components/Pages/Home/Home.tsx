@@ -4,15 +4,21 @@ import InputLineForSearch from "../../UI/Input/Input";
 import GroupCards from "../../UI/Cards/GroupCards/GroupCards";
 import { getMoviesFetchRequestedCreator, justSortItCreator } from "../../store/actions";
 import { createSearchUrl } from "../../../utils";
-import './Home.css';
+import "./Home.css";
 import SortForm from "../../UI/SortForm/SortForm";
 import { RootState } from "../../store/reducers/rootReducer";
 import { payload } from "../../store/type/actionsType";
+import Tost from "../../UI/Tost/Tost";
 
 const Home: React.FC = () => {
+  const [show, setShow] = useState(true);
+
+  const toggleShow = () => setShow(!show);
+
+
   const [title, setTitle] = useState<string>("");
   const dispatch = useDispatch();
-  const copyArray = useSelector((state: RootState) => state.search.data.Search);
+  const listIsEmpry = useSelector((state: RootState) => state.search.data.totalResults);
 
   const inputHandler = (event: React.ChangeEvent<HTMLInputElement>): void => {
     setTitle(event.target.value);
@@ -31,14 +37,15 @@ const Home: React.FC = () => {
   };
 
   const dropHandler = (event: React.ChangeEvent<HTMLSelectElement>): void => {
-    const { target: { value } } = event;
-    dispatch(justSortItCreator(value as payload))
-  
-  }
+    const {
+      target: { value },
+    } = event;
+    dispatch(justSortItCreator(value as payload));
+  };
   return (
     <div>
       <div className="form">
-        <SortForm dropHandler={ dropHandler }/>
+        <SortForm dropHandler={dropHandler} />
       </div>
       <InputLineForSearch
         inputHandler={inputHandler}
@@ -46,7 +53,7 @@ const Home: React.FC = () => {
         enterPressHandler={enterPressHandler}
         buttonHandler={buttonHandler}
       />
-      <GroupCards />
+      {Boolean(Number(listIsEmpry)) ? <GroupCards /> : <Tost show={show} toggleShow={ toggleShow}/>}
     </div>
   );
 };
