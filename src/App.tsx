@@ -11,10 +11,10 @@ const App: React.FC = () => (
       <Navigation />
 
       <Switch>
-        <Route path="/" exact={true} render={() => <Home />} />
-        <Route path="/author" exact={true} render={() => <Author />} />
-        <Route path="/team" exact={true} render={() => <Team />} />
-        <Route path="/movie" exact={true} render={() => <Movie />} />
+        <Route exact={true} path="/" render={() => <Home />} />
+        <Route path="/author" render={() => <Author />} />
+        <Route path="/team" render={() => <Team />} />
+        <Route path="/movie" render={() => <Movie />} />
       </Switch>
     </div>
   );
