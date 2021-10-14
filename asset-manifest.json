@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/Movies/static/css/main.057dbd09.chunk.css",
+    "main.js": "/Movies/static/js/main.fbb64787.chunk.js",
+    "main.js.map": "/Movies/static/js/main.fbb64787.chunk.js.map",
+    "runtime-main.js": "/Movies/static/js/runtime-main.1facf6bb.js",
+    "runtime-main.js.map": "/Movies/static/js/runtime-main.1facf6bb.js.map",
+    "static/css/2.c1256375.chunk.css": "/Movies/static/css/2.c1256375.chunk.css",
+    "static/js/2.d1175f3c.chunk.js": "/Movies/static/js/2.d1175f3c.chunk.js",
+    "static/js/2.d1175f3c.chunk.js.map": "/Movies/static/js/2.d1175f3c.chunk.js.map",
+    "index.html": "/Movies/index.html",
+    "static/css/2.c1256375.chunk.css.map": "/Movies/static/css/2.c1256375.chunk.css.map",
+    "static/css/main.057dbd09.chunk.css.map": "/Movies/static/css/main.057dbd09.chunk.css.map",
+    "static/js/2.d1175f3c.chunk.js.LICENSE.txt": "/Movies/static/js/2.d1175f3c.chunk.js.LICENSE.txt",
+    "static/media/fire.460e3e58.svg": "/Movies/static/media/fire.460e3e58.svg",
+    "static/media/giraffe.49a2fdfd.svg": "/Movies/static/media/giraffe.49a2fdfd.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.1facf6bb.js",
+    "static/css/2.c1256375.chunk.css",
+    "static/js/2.d1175f3c.chunk.js",
+    "static/css/main.057dbd09.chunk.css",
+    "static/js/main.fbb64787.chunk.js"
+  ]
+}
