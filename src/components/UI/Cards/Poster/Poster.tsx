@@ -1,5 +1,5 @@
 import React from "react";
-import { Card, Button, Nav } from "react-bootstrap";
+import { Card, Button } from "react-bootstrap";
 // import { useSelector } from "react-redux";
 import { LinkContainer } from "react-router-bootstrap";
 // import { RootState } from "../../../store/reducers/rootReducer";
@@ -22,11 +22,9 @@ const Poster: React.FC<PropsType> = (props) => (
         <Card.Text>
           {props.Year}, {props.Type}
         </Card.Text>
-        <Nav.Link href="/movie">
           <LinkContainer to="/movie">
             <Button onClick={() => props.buttonHandler(props.imdbID)}>Movie</Button>
           </LinkContainer>
-        </Nav.Link>
       </Card.Body>
     </Card>
   );

@@ -8,16 +8,12 @@ const Navigation: React.FC = () => (
       <Container>
         <Navbar.Brand href="/">Movies</Navbar.Brand>
         <Nav className="justify-content-end">
-          <Nav.Link href="/author">
             <LinkContainer to="/author">
-              <Button>Author</Button>
+              <Button className='m-1'>Author</Button>
             </LinkContainer>
-          </Nav.Link>
-          <Nav.Link href="/team">
             <LinkContainer to="/team">
-              <Button>Team</Button>
+              <Button className='m-1'>Team</Button>
             </LinkContainer>
-          </Nav.Link>
         </Nav>
       </Container>
     </Navbar>
