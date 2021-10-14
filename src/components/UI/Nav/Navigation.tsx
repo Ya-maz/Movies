@@ -6,7 +6,11 @@ import { LinkContainer } from "react-router-bootstrap";
 const Navigation: React.FC = () => (
     <Navbar bg="info" variant="dark">
       <Container>
-        <Navbar.Brand href="/">Movies</Navbar.Brand>
+      <LinkContainer to="/">
+        <Navbar.Brand>
+          Movies
+        </Navbar.Brand>
+      </LinkContainer>
         <Nav className="justify-content-end">
             <LinkContainer to="/author">
               <Button className='m-1'>Author</Button>
