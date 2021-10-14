@@ -44,6 +44,7 @@
       "prettier --write"
     ]
   },
+  "homepage": "https://ya-maz.github.io/MoviesPage/",
   "scripts": {
     "start": "react-scripts start",
     "lint": "eslint src/** --ext .ts,.tsx",
